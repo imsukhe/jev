@@ -1,0 +1,58 @@
+{
+  "name": "jev-ai",
+  "version": "0.1.0",
+  "description": "A wrapper that gets more value out of TypeSafe's JEV model: transcript compaction, cost-control modes, and a local usage ledger for coding agents.",
+  "license": "MIT",
+  "author": "Sukhdev Singh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imsukhe/jev.git"
+  },
+  "homepage": "https://github.com/imsukhe/jev#readme",
+  "bugs": {
+    "url": "https://github.com/imsukhe/jev/issues"
+  },
+  "type": "module",
+  "bin": {
+    "jev": "./bin/jev.mjs"
+  },
+  "scripts": {
+    "test": "node --test",
+    "lint": "for f in bin/jev.mjs lib/*.mjs hooks/*.mjs scripts/validate.mjs; do node --check \"$f\" || exit 1; done",
+    "validate": "node scripts/validate.mjs",
+    "prepublishOnly": "npm test && npm run lint && npm run validate",
+    "fidelity": "node scripts/fidelity.mjs"
+  },
+  "dependencies": {
+    "@ai-sdk/gateway": "^4.0.0",
+    "ai": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "ai-agents",
+    "claude-code",
+    "codex",
+    "cost-control",
+    "token-usage",
+    "jev",
+    "context-compaction"
+  ],
+  "files": [
+    "bin",
+    "lib",
+    "hooks",
+    "skills",
+    "adapters",
+    "docs",
+    "scripts",
+    "examples",
+    "plugin.json",
+    ".claude-plugin",
+    ".codex-plugin",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ]
+}

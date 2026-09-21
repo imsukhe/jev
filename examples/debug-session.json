@@ -1,0 +1,281 @@
+[
+  {
+    "role": "user",
+    "text": "Our checkout API returns 500 for orders over $1000. Find the cause and fix it. Do not touch src/generated/.",
+    "toolUses": []
+  },
+  {
+    "role": "assistant",
+    "text": "",
+    "toolUses": [
+      {
+        "tool_use_id": "toolu_1",
+        "tool": "Bash",
+        "input": {
+          "command": "ls -R src | head -200"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "text": "",
+    "toolUses": [],
+    "toolResults": [
+      {
+        "tool_use_id": "toolu_1",
+        "text": "src/module_0/index.ts\nsrc/module_1/index.ts\nsrc/module_2/index.ts\nsrc/module_3/index.ts\nsrc/module_4/index.ts\nsrc/module_5/index.ts\nsrc/module_6/index.ts\nsrc/module_7/index.ts\nsrc/module_8/index.ts\nsrc/module_9/index.ts\nsrc/module_10/index.ts\nsrc/module_11/index.ts\nsrc/module_12/index.ts\nsrc/module_13/index.ts\nsrc/module_14/index.ts\nsrc/module_15/index.ts\nsrc/module_16/index.ts\nsrc/module_17/index.ts\nsrc/module_18/index.ts\nsrc/module_19/index.ts\nsrc/module_20/index.ts\nsrc/module_21/index.ts\nsrc/module_22/index.ts\nsrc/module_23/index.ts\nsrc/module_24/index.ts\nsrc/module_25/index.ts\nsrc/module_26/index.ts\nsrc/module_27/index.ts\nsrc/module_28/index.ts\nsrc/module_29/index.ts\nsrc/module_30/index.ts\nsrc/module_31/index.ts\nsrc/module_32/index.ts\nsrc/module_33/index.ts\nsrc/module_34/index.ts\nsrc/module_35/index.ts\nsrc/module_36/index.ts\nsrc/module_37/index.ts\nsrc/module_38/index.ts\nsrc/module_39/index.ts\nsrc/module_40/index.ts\nsrc/module_41/index.ts\nsrc/module_42/index.ts\nsrc/module_43/index.ts\nsrc/module_44/index.ts\nsrc/module_45/index.ts\nsrc/module_46/index.ts\nsrc/module_47/index.ts\nsrc/module_48/index.ts\nsrc/module_49/index.ts\nsrc/module_50/index.ts\nsrc/module_51/index.ts\nsrc/module_52/index.ts\nsrc/module_53/index.ts\nsrc/module_54/index.ts\nsrc/module_55/index.ts\nsrc/module_56/index.ts\nsrc/module_57/index.ts\nsrc/module_58/index.ts\nsrc/module_59/index.ts\nsrc/module_60/index.ts\nsrc/module_61/index.ts\nsrc/module_62/index.ts\nsrc/module_63/index.ts\nsrc/module_64/index.ts\nsrc/module_65/index.ts\nsrc/module_66/index.ts\nsrc/module_67/index.ts\nsrc/module_68/index.ts\nsrc/module_69/index.ts\nsrc/module_70/index.ts\nsrc/module_71/index.ts\nsrc/module_72/index.ts\nsrc/module_73/index.ts\nsrc/module_74/index.ts\nsrc/module_75/index.ts\nsrc/module_76/index.ts\nsrc/module_77/index.ts\nsrc/module_78/index.ts\nsrc/module_79/index.ts\nsrc/module_80/index.ts\nsrc/module_81/index.ts\nsrc/module_82/index.ts\nsrc/module_83/index.ts\nsrc/module_84/index.ts\nsrc/module_85/index.ts\nsrc/module_86/index.ts\nsrc/module_87/index.ts\nsrc/module_88/index.ts\nsrc/module_89/index.ts\nsrc/module_90/index.ts\nsrc/module_91/index.ts\nsrc/module_92/index.ts\nsrc/module_93/index.ts\nsrc/module_94/index.ts\nsrc/module_95/index.ts\nsrc/module_96/index.ts\nsrc/module_97/index.ts\nsrc/module_98/index.ts\nsrc/module_99/index.ts\nsrc/module_100/index.ts\nsrc/module_101/index.ts\nsrc/module_102/index.ts\nsrc/module_103/index.ts\nsrc/module_104/index.ts\nsrc/module_105/index.ts\nsrc/module_106/index.ts\nsrc/module_107/index.ts\nsrc/module_108/index.ts\nsrc/module_109/index.ts\nsrc/module_110/index.ts\nsrc/module_111/index.ts\nsrc/module_112/index.ts\nsrc/module_113/index.ts\nsrc/module_114/index.ts\nsrc/module_115/index.ts\nsrc/module_116/index.ts\nsrc/module_117/index.ts\nsrc/module_118/index.ts\nsrc/module_119/index.ts"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "text": "",
+    "toolUses": [
+      {
+        "tool_use_id": "toolu_2",
+        "tool": "Grep",
+        "input": {
+          "pattern": "500",
+          "path": "src/legacy"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "text": "",
+    "toolUses": [],
+    "toolResults": [
+      {
+        "tool_use_id": "toolu_2",
+        "text": "src/legacy/old_0.ts:0: // legacy status 500 handler\nsrc/legacy/old_1.ts:1: // legacy status 500 handler\nsrc/legacy/old_2.ts:2: // legacy status 500 handler\nsrc/legacy/old_3.ts:3: // legacy status 500 handler\nsrc/legacy/old_4.ts:4: // legacy status 500 handler\nsrc/legacy/old_5.ts:5: // legacy status 500 handler\nsrc/legacy/old_6.ts:6: // legacy status 500 handler\nsrc/legacy/old_7.ts:7: // legacy status 500 handler\nsrc/legacy/old_8.ts:8: // legacy status 500 handler\nsrc/legacy/old_9.ts:9: // legacy status 500 handler\nsrc/legacy/old_10.ts:10: // legacy status 500 handler\nsrc/legacy/old_11.ts:11: // legacy status 500 handler\nsrc/legacy/old_12.ts:12: // legacy status 500 handler\nsrc/legacy/old_13.ts:13: // legacy status 500 handler\nsrc/legacy/old_14.ts:14: // legacy status 500 handler\nsrc/legacy/old_15.ts:15: // legacy status 500 handler\nsrc/legacy/old_16.ts:16: // legacy status 500 handler\nsrc/legacy/old_17.ts:17: // legacy status 500 handler\nsrc/legacy/old_18.ts:18: // legacy status 500 handler\nsrc/legacy/old_19.ts:19: // legacy status 500 handler\nsrc/legacy/old_20.ts:20: // legacy status 500 handler\nsrc/legacy/old_21.ts:21: // legacy status 500 handler\nsrc/legacy/old_22.ts:22: // legacy status 500 handler\nsrc/legacy/old_23.ts:23: // legacy status 500 handler\nsrc/legacy/old_24.ts:24: // legacy status 500 handler\nsrc/legacy/old_25.ts:25: // legacy status 500 handler\nsrc/legacy/old_26.ts:26: // legacy status 500 handler\nsrc/legacy/old_27.ts:27: // legacy status 500 handler\nsrc/legacy/old_28.ts:28: // legacy status 500 handler\nsrc/legacy/old_29.ts:29: // legacy status 500 handler\nsrc/legacy/old_30.ts:30: // legacy status 500 handler\nsrc/legacy/old_31.ts:31: // legacy status 500 handler\nsrc/legacy/old_32.ts:32: // legacy status 500 handler\nsrc/legacy/old_33.ts:33: // legacy status 500 handler\nsrc/legacy/old_34.ts:34: // legacy status 500 handler\nsrc/legacy/old_35.ts:35: // legacy status 500 handler\nsrc/legacy/old_36.ts:36: // legacy status 500 handler\nsrc/legacy/old_37.ts:37: // legacy status 500 handler\nsrc/legacy/old_38.ts:38: // legacy status 500 handler\nsrc/legacy/old_39.ts:39: // legacy status 500 handler\nsrc/legacy/old_40.ts:40: // legacy status 500 handler\nsrc/legacy/old_41.ts:41: // legacy status 500 handler\nsrc/legacy/old_42.ts:42: // legacy status 500 handler\nsrc/legacy/old_43.ts:43: // legacy status 500 handler\nsrc/legacy/old_44.ts:44: // legacy status 500 handler\nsrc/legacy/old_45.ts:45: // legacy status 500 handler\nsrc/legacy/old_46.ts:46: // legacy status 500 handler\nsrc/legacy/old_47.ts:47: // legacy status 500 handler\nsrc/legacy/old_48.ts:48: // legacy status 500 handler\nsrc/legacy/old_49.ts:49: // legacy status 500 handler\nsrc/legacy/old_50.ts:50: // legacy status 500 handler\nsrc/legacy/old_51.ts:51: // legacy status 500 handler\nsrc/legacy/old_52.ts:52: // legacy status 500 handler\nsrc/legacy/old_53.ts:53: // legacy status 500 handler\nsrc/legacy/old_54.ts:54: // legacy status 500 handler\nsrc/legacy/old_55.ts:55: // legacy status 500 handler\nsrc/legacy/old_56.ts:56: // legacy status 500 handler\nsrc/legacy/old_57.ts:57: // legacy status 500 handler\nsrc/legacy/old_58.ts:58: // legacy status 500 handler\nsrc/legacy/old_59.ts:59: // legacy status 500 handler"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "text": "Nothing in legacy. Looking at the checkout path instead.",
+    "toolUses": []
+  },
+  {
+    "role": "assistant",
+    "text": "",
+    "toolUses": [
+      {
+        "tool_use_id": "toolu_3",
+        "tool": "Read",
+        "input": {
+          "file_path": "src/legacy/billing_v1.ts"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "text": "",
+    "toolUses": [],
+    "toolResults": [
+      {
+        "tool_use_id": "toolu_3",
+        "text": "// deprecated\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\nexport function legacyCharge() { return null; }\n"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "text": "",
+    "toolUses": [
+      {
+        "tool_use_id": "toolu_4",
+        "tool": "Grep",
+        "input": {
+          "pattern": "createOrder",
+          "path": "src/checkout"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "text": "",
+    "toolUses": [],
+    "toolResults": [
+      {
+        "tool_use_id": "toolu_4",
+        "text": "src/checkout/handler.ts:42:export async function createOrder(req, res) {\nsrc/checkout/validate.ts:11:import { createOrder } from './handler'"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "text": "",
+    "toolUses": [
+      {
+        "tool_use_id": "toolu_5",
+        "tool": "Read",
+        "input": {
+          "file_path": "src/checkout/handler.ts"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "text": "",
+    "toolUses": [],
+    "toolResults": [
+      {
+        "tool_use_id": "toolu_5",
+        "text": "export async function createOrder(req, res) {\n  const total = req.body.total;\n  const limit = getLimit(req.user);\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  // ... business logic ...\n  if (total > limit) throw new Error('over limit');\n}"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "text": "Found it: createOrder throws instead of returning a 402 when the total exceeds the limit.",
+    "toolUses": []
+  },
+  {
+    "role": "assistant",
+    "text": "",
+    "toolUses": [
+      {
+        "tool_use_id": "toolu_6",
+        "tool": "Read",
+        "input": {
+          "file_path": "src/checkout/limits.ts"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "text": "",
+    "toolUses": [],
+    "toolResults": [
+      {
+        "tool_use_id": "toolu_6",
+        "text": "export function getLimit(user) {\n  return user.tier === 'pro' ? 100000 : 1000;\n}"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "text": "",
+    "toolUses": [
+      {
+        "tool_use_id": "toolu_7",
+        "tool": "Bash",
+        "input": {
+          "command": "npm test -- checkout"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "text": "",
+    "toolUses": [],
+    "toolResults": [
+      {
+        "tool_use_id": "toolu_7",
+        "text": "> checkout tests\n  ✓ checkout case 0 (3ms)\n  ✓ checkout case 1 (4ms)\n  ✓ checkout case 2 (5ms)\n  ✓ checkout case 3 (6ms)\n  ✓ checkout case 4 (7ms)\n  ✓ checkout case 5 (8ms)\n  ✓ checkout case 6 (9ms)\n  ✓ checkout case 7 (10ms)\n  ✓ checkout case 8 (11ms)\n  ✓ checkout case 9 (12ms)\n  ✓ checkout case 10 (13ms)\n  ✓ checkout case 11 (14ms)\n  ✓ checkout case 12 (15ms)\n  ✓ checkout case 13 (16ms)\n  ✓ checkout case 14 (17ms)\n  ✓ checkout case 15 (18ms)\n  ✓ checkout case 16 (19ms)\n  ✓ checkout case 17 (20ms)\n  ✓ checkout case 18 (21ms)\n  ✓ checkout case 19 (22ms)\n  ✓ checkout case 20 (23ms)\n  ✓ checkout case 21 (24ms)\n  ✓ checkout case 22 (25ms)\n  ✓ checkout case 23 (26ms)\n  ✓ checkout case 24 (27ms)\n  ✓ checkout case 25 (28ms)\n  ✓ checkout case 26 (29ms)\n  ✓ checkout case 27 (30ms)\n  ✓ checkout case 28 (31ms)\n  ✓ checkout case 29 (32ms)\n  ✓ checkout case 30 (33ms)\n  ✓ checkout case 31 (34ms)\n  ✓ checkout case 32 (35ms)\n  ✓ checkout case 33 (36ms)\n  ✓ checkout case 34 (37ms)\n  ✓ checkout case 35 (38ms)\n  ✓ checkout case 36 (39ms)\n  ✓ checkout case 37 (40ms)\n  ✓ checkout case 38 (41ms)\n  ✓ checkout case 39 (42ms)\n  ✓ checkout case 40 (43ms)\n  ✓ checkout case 41 (44ms)\n  ✓ checkout case 42 (45ms)\n  ✓ checkout case 43 (46ms)\n  ✓ checkout case 44 (47ms)\n  ✓ checkout case 45 (48ms)\n  ✓ checkout case 46 (49ms)\n  ✓ checkout case 47 (50ms)\n  ✓ checkout case 48 (51ms)\n  ✓ checkout case 49 (52ms)\n  ✓ checkout case 50 (53ms)\n  ✓ checkout case 51 (54ms)\n  ✓ checkout case 52 (55ms)\n  ✓ checkout case 53 (56ms)\n  ✓ checkout case 54 (57ms)\n  ✓ checkout case 55 (58ms)\n  ✓ checkout case 56 (59ms)\n  ✓ checkout case 57 (60ms)\n  ✓ checkout case 58 (61ms)\n  ✓ checkout case 59 (62ms)\n  ✓ checkout case 60 (63ms)\n  ✓ checkout case 61 (64ms)\n  ✓ checkout case 62 (65ms)\n  ✓ checkout case 63 (66ms)\n  ✓ checkout case 64 (67ms)\n  ✓ checkout case 65 (68ms)\n  ✓ checkout case 66 (69ms)\n  ✓ checkout case 67 (70ms)\n  ✓ checkout case 68 (71ms)\n  ✓ checkout case 69 (72ms)\n  ✓ checkout case 70 (73ms)\n  ✓ checkout case 71 (74ms)\n  ✓ checkout case 72 (75ms)\n  ✓ checkout case 73 (76ms)\n  ✓ checkout case 74 (77ms)\n  ✓ checkout case 75 (78ms)\n  ✓ checkout case 76 (79ms)\n  ✓ checkout case 77 (80ms)\n  ✓ checkout case 78 (81ms)\n  ✓ checkout case 79 (82ms)\n  ✓ checkout case 80 (83ms)\n  ✓ checkout case 81 (84ms)\n  ✓ checkout case 82 (85ms)\n  ✓ checkout case 83 (86ms)\n  ✓ checkout case 84 (87ms)\n  ✓ checkout case 85 (88ms)\n  ✓ checkout case 86 (89ms)\n  ✓ checkout case 87 (90ms)\n  ✓ checkout case 88 (91ms)\n  ✓ checkout case 89 (92ms)\n  ✓ checkout case 90 (93ms)\n  ✓ checkout case 91 (94ms)\n  ✓ checkout case 92 (95ms)\n  ✓ checkout case 93 (96ms)\n  ✓ checkout case 94 (97ms)\n  ✓ checkout case 95 (98ms)\n  ✓ checkout case 96 (99ms)\n  ✓ checkout case 97 (100ms)\n  ✓ checkout case 98 (101ms)\n  ✓ checkout case 99 (102ms)\n  ✓ checkout case 100 (103ms)\n  ✓ checkout case 101 (104ms)\n  ✓ checkout case 102 (105ms)\n  ✓ checkout case 103 (106ms)\n  ✓ checkout case 104 (107ms)\n  ✓ checkout case 105 (108ms)\n  ✓ checkout case 106 (109ms)\n  ✓ checkout case 107 (110ms)\n  ✓ checkout case 108 (111ms)\n  ✓ checkout case 109 (112ms)\n  ✓ checkout case 110 (113ms)\n  ✓ checkout case 111 (114ms)\n  ✓ checkout case 112 (115ms)\n  ✓ checkout case 113 (116ms)\n  ✓ checkout case 114 (117ms)\n  ✓ checkout case 115 (118ms)\n  ✓ checkout case 116 (119ms)\n  ✓ checkout case 117 (120ms)\n  ✓ checkout case 118 (121ms)\n  ✓ checkout case 119 (122ms)\n  ✓ checkout case 120 (123ms)\n  ✓ checkout case 121 (124ms)\n  ✓ checkout case 122 (125ms)\n  ✓ checkout case 123 (126ms)\n  ✓ checkout case 124 (127ms)\n  ✓ checkout case 125 (128ms)\n  ✓ checkout case 126 (129ms)\n  ✓ checkout case 127 (130ms)\n  ✓ checkout case 128 (131ms)\n  ✓ checkout case 129 (132ms)\n  ✓ checkout case 130 (133ms)\n  ✓ checkout case 131 (134ms)\n  ✓ checkout case 132 (135ms)\n  ✓ checkout case 133 (136ms)\n  ✓ checkout case 134 (137ms)\n  ✓ checkout case 135 (138ms)\n  ✓ checkout case 136 (139ms)\n  ✓ checkout case 137 (140ms)\n  ✓ checkout case 138 (141ms)\n  ✓ checkout case 139 (142ms)\n\n  1 failing\n  createOrder over limit: expected 402, got 500\n"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "text": "Reproduced: one failing case, expected 402 but got 500.",
+    "toolUses": []
+  },
+  {
+    "role": "assistant",
+    "text": "",
+    "toolUses": [
+      {
+        "tool_use_id": "toolu_8",
+        "tool": "Edit",
+        "input": {
+          "file_path": "src/checkout/handler.ts",
+          "old_string": "throw new Error('over limit')",
+          "new_string": "return res.status(402).json({ error: 'over limit' })"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "text": "",
+    "toolUses": [],
+    "toolResults": [
+      {
+        "tool_use_id": "toolu_8",
+        "text": "Edit applied to src/checkout/handler.ts"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "text": "",
+    "toolUses": [
+      {
+        "tool_use_id": "toolu_9",
+        "tool": "Bash",
+        "input": {
+          "command": "npm test -- checkout"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "text": "",
+    "toolUses": [],
+    "toolResults": [
+      {
+        "tool_use_id": "toolu_9",
+        "text": "> checkout tests\n  141 passing (820ms)\n  0 failing"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "text": "Fix applied, all checkout tests pass.",
+    "toolUses": []
+  },
+  {
+    "role": "user",
+    "text": "Good. Now add a regression test for the 402 path and update the changelog.",
+    "toolUses": []
+  },
+  {
+    "role": "assistant",
+    "text": "",
+    "toolUses": [
+      {
+        "tool_use_id": "toolu_10",
+        "tool": "Read",
+        "input": {
+          "file_path": "test/checkout.test.ts"
+        }
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "text": "",
+    "toolUses": [],
+    "toolResults": [
+      {
+        "tool_use_id": "toolu_10",
+        "text": "import { createOrder } from '../src/checkout/handler';\n\ndescribe('createOrder', () => {\n  it('accepts an order under the limit', async () => { /* ... */ });\n});"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "text": "I'll add the regression test next to the existing one.",
+    "toolUses": []
+  }
+]

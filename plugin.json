@@ -1,0 +1,17 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "jev",
+  "version": "0.1.0",
+  "description": "A wrapper that gets more value out of TypeSafe's JEV model: transcript compaction, cost-control modes, and a local usage ledger for Claude Code and Codex.",
+  "author": {
+    "name": "Sukhdev Singh"
+  },
+  "repository": "https://github.com/imsukhe/jev",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "codex",
+    "cost-control",
+    "usage"
+  ]
+}

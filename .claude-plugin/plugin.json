@@ -1,0 +1,96 @@
+{
+  "name": "jev",
+  "version": "0.1.0",
+  "description": "A wrapper that gets more value out of TypeSafe's JEV model: transcript compaction, cost-control modes, and a local usage ledger for Claude Code and Codex.",
+  "author": {
+    "name": "Sukhdev Singh"
+  },
+  "repository": "https://github.com/imsukhe/jev",
+  "license": "MIT",
+  "userConfig": {
+    "enabled": {
+      "type": "boolean",
+      "title": "Enable automatic compaction",
+      "description": "Turns the session.compact/turn.complete hook on. Off by default. This is the hook's own switch: it cannot read this project's .jev/config.json (the hook sandbox has no filesystem access), so \"jev compaction on\" in a terminal does not affect it.",
+      "default": false
+    },
+    "apiKey": {
+      "type": "string",
+      "title": "TypeSafe API key",
+      "description": "TypeSafe API key for automated compaction. Leave unset to use TYPESAFE_API_KEY.",
+      "sensitive": true
+    },
+    "keepThreshold": {
+      "type": "number",
+      "title": "Keep threshold",
+      "description": "Minimum Jev probability that a tool call or tool result is still needed; below it the item is removed.",
+      "default": 0.5
+    },
+    "preserveRecentMessages": {
+      "type": "number",
+      "title": "Recent messages to preserve",
+      "description": "Number of newest messages pinned from compaction.",
+      "default": 6
+    },
+    "compactAtPercent": {
+      "type": "number",
+      "title": "Compaction percentage",
+      "description": "Context percentage at which turn.complete requests compaction.",
+      "default": 60
+    },
+    "minReductionRatio": {
+      "type": "number",
+      "title": "Minimum reduction ratio",
+      "description": "Minimum estimated character reduction required to replace history; below it, falls back to Claude Code's built-in compaction.",
+      "default": 0.25
+    },
+    "maxStateTokens": {
+      "type": "number",
+      "title": "Maximum Jev state tokens",
+      "description": "Estimated token budget for the conversation state sent with every Jev request.",
+      "default": 25000
+    },
+    "maxRequestTokens": {
+      "type": "number",
+      "title": "Maximum Jev request tokens",
+      "description": "Estimated token budget for state plus questions in one Jev request.",
+      "default": 30000
+    },
+    "truncateHeadChars": {
+      "type": "number",
+      "title": "Truncated tool result head",
+      "description": "Characters of a tool result kept when Jev decides its full output is no longer needed.",
+      "default": 300
+    },
+    "maxRequests": {
+      "type": "number",
+      "title": "Maximum Jev requests per compaction",
+      "description": "Ceiling on how many requests one compaction may make. Every request repeats the whole state, so this is the cost multiplier; compaction refuses rather than exceed it.",
+      "default": 24
+    },
+    "maxConcurrentRequests": {
+      "type": "number",
+      "title": "Concurrent Jev requests",
+      "description": "How many of those requests run at once.",
+      "default": 4
+    },
+    "maxGoalChars": {
+      "type": "number",
+      "title": "Maximum goal characters",
+      "description": "Cap on the task description derived from your recent prompts. Keeps a pasted log in a prompt from making the state unfittable.",
+      "default": 2000
+    },
+    "requestTimeoutMs": {
+      "type": "number",
+      "title": "Jev request timeout (ms)",
+      "description": "A request that does not finish in this long fails, so compaction falls back to the built-in summary instead of hanging.",
+      "default": 60000
+    },
+    "model": {
+      "type": "string",
+      "title": "Jev model",
+      "description": "TypeSafe Jev model name.",
+      "default": "jev-latest"
+    }
+  }
+}

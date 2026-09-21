@@ -1,0 +1,4 @@
+node_modules/
+.jev/
+coverage/
+.DS_Store

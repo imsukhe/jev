@@ -1,0 +1,2 @@
+{"timestamp":"2026-09-21T10:00:00.000Z","host":"claude","model":"claude-sonnet","project":"demo","task":"test","inputTokens":1200,"outputTokens":250,"cacheReadTokens":800,"cacheWriteTokens":0,"costUsd":0.018,"totalTokens":2250}
+{"timestamp":"2026-09-21T11:00:00.000Z","host":"codex","model":"gpt-codex","project":"demo","task":"review","inputTokens":900,"outputTokens":180,"cacheReadTokens":0,"cacheWriteTokens":0,"costUsd":0.012,"totalTokens":1080}
